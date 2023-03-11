@@ -1,0 +1,39 @@
+{
+  "manifest_version": 3,
+  "name": "BiliScope",
+  "version": "0.1.4",
+  "description": "Bilibili插件，知道TA是个什么UP主",
+  "icons": {
+    "128": "img/logo.png"
+  },
+  "content_scripts": [
+    {
+      "js": [
+        "scripts/constants.js",
+        "scripts/biliscope.js",
+        "scripts/biliapi.js",
+        "scripts/ui.js",
+        "scripts/stopwords.js",
+        "scripts/wordcloud2.min.js"
+      ],
+      "css": [
+        "css/idcard.css"
+      ],
+      "matches": [
+        "https://*.bilibili.com/*"
+      ],
+      "exclude_matches": [
+        "https://space.bilibili.com/*",
+        "https://t.bilibili.com/*"
+      ]
+    }
+  ],
+  "author": "gaogaotiantian@hotmail.com",
+  "permissions": [
+    "storage"
+  ],
+  "options_ui": {
+    "page": "options/options.html",
+    "open_in_tab": false
+  }
+}
